@@ -1,0 +1,130 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+    /* Цвета от MAX (подставляются автоматически) */
+    --bg-color: var(--max-theme-bg-color, #ffffff);
+    --text-color: var(--max-theme-text-color, #000000);
+    --hint-color: var(--max-theme-hint-color, #999999);
+    --button-color: var(--max-theme-button-color, #3390ec);
+    --button-text: var(--max-theme-button-text-color, #ffffff);
+    --secondary-bg: var(--max-theme-secondary-bg-color, #f4f4f5);
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container { max-width: 480px; margin: 0 auto; }
+
+.progress-bar {
+    height: 4px;
+    background: var(--secondary-bg);
+    border-radius: 2px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--button-color);
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.form-card {
+    background: var(--secondary-bg);
+    padding: 20px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+}
+
+h1 { font-size: 22px; margin-bottom: 8px; }
+.subtitle { color: var(--hint-color); font-size: 14px; margin-bottom: 20px; }
+h3 { font-size: 16px; margin: 20px 0 15px; }
+
+.form-group { margin-bottom: 16px; }
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid var(--hint-color);
+    border-radius: 12px;
+    font-size: 16px;
+    background: var(--bg-color);
+    color: var(--text-color);
+    transition: border-color 0.3s;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--button-color);
+}
+
+textarea { resize: vertical; min-height: 80px; }
+
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.checkbox-group input { width: auto; margin-top: 4px; }
+.checkbox-group label { margin: 0; font-weight: 400; font-size: 13px; }
+
+.divider { border: 0; border-top: 1px solid var(--hint-color); margin: 20px 0; opacity: 0.3; }
+
+.submit-btn {
+    width: 100%;
+    padding: 16px;
+    background: var(--button-color);
+    color: var(--button-text);
+    border: none;
+    border-radius: 12px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* Экран успеха */
+.success-screen {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.success-icon { font-size: 64px; margin-bottom: 20px; }
+.success-screen h2 { margin-bottom: 10px; }
+.success-screen p { color: var(--hint-color); margin-bottom: 30px; }
+
+.close-btn {
+    padding: 16px 32px;
+    background: var(--button-color);
+    color: var(--button-text);
+    border: none;
+    border-radius: 12px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+/* Скрываем кнопку на мобильных, если используем MainButton */
+@media (max-width: 480px) {
+    .submit-btn { display: none; }
+}

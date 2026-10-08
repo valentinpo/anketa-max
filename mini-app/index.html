@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Анкета организации</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- MAX Web App SDK (аналог Telegram WebApp) -->
+    <script src="https://max.ru/js/max-web-app.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Прогресс-бар -->
+        <div class="progress-bar">
+            <div class="progress-fill" id="progress"></div>
+        </div>
+
+        <div class="form-card">
+            <h1>📋 Анкета организации</h1>
+            <p class="subtitle">Заполните форму для сотрудничества</p>
+
+            <form id="surveyForm">
+                <!-- Организация -->
+                <div class="form-group">
+                    <label for="organization">Организация *</label>
+                    <input type="text" id="organization" name="organization" required placeholder="ООО «Ромашка»">
+                </div>
+
+                <!-- Адрес -->
+                <div class="form-group">
+                    <label for="address">Адрес *</label>
+                    <input type="text" id="address" name="address" required placeholder="г. Москва, ул. Примерная, д. 1">
+                </div>
+
+                <!-- ИНН -->
+                <div class="form-group">
+                    <label for="inn">ИНН *</label>
+                    <input type="text" id="inn" name="inn" required placeholder="1234567890" pattern="[0-9]{10,12}">
+                </div>
+
+                <!-- Контактное лицо -->
+                <div class="form-group">
+                    <label for="contact_person">Контактное лицо *</label>
+                    <input type="text" id="contact_person" name="contact_person" required placeholder="Иванов Иван">
+                </div>
+
+                <!-- Телефон -->
+                <div class="form-group">
+                    <label for="phone">Телефон *</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="+7 (999) 000-00-00">
+                </div>
+
+                <!-- Мессенджер -->
+                <div class="form-group">
+                    <label for="messenger">Мессенджер</label>
+                    <input type="text" id="messenger" name="messenger" placeholder="Telegram / WhatsApp">
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email">Электронная почта *</label>
+                    <input type="email" id="email" name="email" required placeholder="info@company.ru">
+                </div>
+
+                <!-- Разделитель -->
+                <hr class="divider">
+                <h3>Дополнительные вопросы</h3>
+
+                <!-- Вопросы 1-4 -->
+                <div class="form-group">
+                    <label for="q1">Вопрос 1</label>
+                    <textarea id="q1" name="q1" rows="2" placeholder="Ваш ответ..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="q2">Вопрос 2</label>
+                    <textarea id="q2" name="q2" rows="2" placeholder="Ваш ответ..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="q3">Вопрос 3</label>
+                    <textarea id="q3" name="q3" rows="2" placeholder="Ваш ответ..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="q4">Вопрос 4</label>
+                    <textarea id="q4" name="q4" rows="2" placeholder="Ваш ответ..."></textarea>
+                </div>
+
+                <!-- Согласие -->
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="consent" name="consent" required>
+                    <label for="consent">Я согласен на обработку персональных данных *</label>
+                </div>
+
+                <!-- Кнопка отправки (будет скрыта, используем MainButton MAX) -->
+                <button type="submit" id="submitBtn" class="submit-btn">Отправить заявку</button>
+            </form>
+        </div>
+
+        <!-- Экран успеха -->
+        <div id="successScreen" class="success-screen" style="display: none;">
+            <div class="success-icon">✅</div>
+            <h2>Заявка отправлена!</h2>
+            <p>Мы свяжемся с вами в ближайшее время</p>
+            <button class="close-btn" onclick="closeApp()">Закрыть</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

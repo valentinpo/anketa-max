@@ -1,0 +1,26 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; background: #f5f7fa; color: #333; line-height: 1.6; }
+.container { max-width: 600px; margin: 0 auto; padding: 20px; }
+.form-card { background: white; padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+h1 { font-size: 24px; margin-bottom: 10px; color: #1a1a1a; }
+.subtitle { color: #666; margin-bottom: 25px; }
+.form-group { margin-bottom: 20px; }
+label { display: block; margin-bottom: 8px; font-weight: 500; color: #444; }
+input[type="text"], input[type="email"], input[type="tel"], textarea {
+    width: 100%; padding: 14px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px; transition: border-color 0.3s;
+}
+input:focus, textarea:focus { outline: none; border-color: #3390ec; }
+textarea { resize: vertical; }
+.checkbox-group { display: flex; align-items: flex-start; gap: 10px; }
+.checkbox-group input { width: auto; margin-top: 4px; }
+.checkbox-group label { margin: 0; font-weight: 400; font-size: 14px; }
+.divider { border: 0; border-top: 1px solid #eee; margin: 25px 0; }
+.submit-btn {
+    width: 100%; padding: 16px; background: #3390ec; color: white; border: none; border-radius: 8px;
+    font-size: 17px; font-weight: 600; cursor: pointer; transition: background 0.3s;
+}
+.submit-btn:hover { background: #2575c4; }
+.alert { padding: 15px; border-radius: 8px; margin-bottom: 20px; }
+.alert.success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+.alert.error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+@media (max-width: 480px) { .form-card { padding: 20px; } }
